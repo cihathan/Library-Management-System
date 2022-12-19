@@ -7,29 +7,25 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MvcLibrary.Models
+namespace MvcLibrary.Models.Entity
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Movement
+    public partial class Author
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Movement()
+        public Author()
         {
-            this.Penalty = new HashSet<Penalty>();
+            this.Book = new HashSet<Book>();
         }
     
         public int ID { get; set; }
-        public Nullable<int> Book { get; set; }
-        public Nullable<int> Member { get; set; }
-        public Nullable<int> Employee { get; set; }
-        public Nullable<System.DateTime> DeliveryDate { get; set; }
-        public Nullable<System.DateTime> ReturnDate { get; set; }
+        public string Name { get; set; }
+        public string LastName { get; set; }
+        public string Details { get; set; }
     
-        public virtual Book Book1 { get; set; }
-        public virtual Users Users { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Penalty> Penalty { get; set; }
+        public virtual ICollection<Book> Book { get; set; }
     }
 }

@@ -5,7 +5,6 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="8b79426550364d27bdf54f020614439b" Name="Diagram1">
-        <EntityTypeShape EntityType="devrimme_cihatModel.sysdiagrams" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="devrimme_cihatModel.Author" Width="1.5" PointX="1.5" PointY="11.375" IsExpanded="true" />
         <EntityTypeShape EntityType="devrimme_cihatModel.Book" Width="1.5" PointX="0.75" PointY="7" IsExpanded="true" />
         <EntityTypeShape EntityType="devrimme_cihatModel.Case" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
