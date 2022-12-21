@@ -7,17 +7,21 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MvcLibrary.Models
+namespace MvcLibrary.Models.Entity
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class sysdiagrams
+    public partial class Penalty
     {
-        public string name { get; set; }
-        public int principal_id { get; set; }
-        public int diagram_id { get; set; }
-        public Nullable<int> version { get; set; }
-        public byte[] definition { get; set; }
+        public int ID { get; set; }
+        public Nullable<int> Member { get; set; }
+        public Nullable<System.DateTime> StartingDate { get; set; }
+        public Nullable<System.DateTime> EndDate { get; set; }
+        public Nullable<decimal> Money { get; set; }
+        public Nullable<int> Movement { get; set; }
+    
+        public virtual Movement Movement1 { get; set; }
+        public virtual Users Users { get; set; }
     }
 }

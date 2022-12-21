@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MvcLibrary.Models
+namespace MvcLibrary.Models.Entity
 {
     using System;
     using System.Collections.Generic;

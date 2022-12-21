@@ -7,13 +7,14 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MvcLibrary.Models
+namespace MvcLibrary.Models.Entity
 {
     using System;
+    using System.Collections.Generic;
     
-    public partial class sp_helpdiagramdefinition_Result
+    public partial class Employee
     {
-        public Nullable<int> version { get; set; }
-        public byte[] definition { get; set; }
+        public byte ID { get; set; }
+        public string Employee1 { get; set; }
     }
 }

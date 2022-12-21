@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MvcLibrary.Models
+namespace MvcLibrary.Models.Entity
 {
     using System;
     using System.Data.Entity;
@@ -27,7 +27,6 @@ namespace MvcLibrary.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Author> Author { get; set; }
         public virtual DbSet<Book> Book { get; set; }
         public virtual DbSet<Case> Case { get; set; }
