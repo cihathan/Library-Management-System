@@ -1,15 +1,29 @@
-﻿
+﻿@using MvcLibrary.Models.Entity;
+@model List<Category>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/Layout.cshtml";
 }
 
 
-<h2>Bootstrap Dersleri</h2>
+<h2>Kategoriler</h2>
 
 
-This side navigation is of full height (100%) and always shown.
-
-Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.
-
-Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.
+<table class="table table-bordered">
+    <tr>
+        <th>KATEGORİ ID</th>
+        <th>KATEGORİ ADI</th>
+        <th>SİL</th>
+        <th>GÜNCELLE</th>
+    </tr>
+    @foreach (var category in Model)
+    {
+        <tr>
+            <td>@category.ID</td>
+            <td>@category.Name</td>
+            <td><a href="/Category/DeleteCategory/@category.ID" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Category/GetCategory/@category.ID" class="btn btn-success">Güncelle</a></td>
+        </tr>
+    }
+</table>
+<a href="/Category/AddCategory/" class="btn btn-primary">Yeni Kategori Ekle</a>

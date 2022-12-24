@@ -1,0 +1,22 @@
+﻿@model MvcLibrary.Models.Entity.Category
+@{
+    ViewBag.Title = "GetCategory";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@using (Html.BeginForm("UpdateCategory", "Category", FormMethod.Post))
+{   <br />
+    <div class="form-group">
+        @Html.LabelFor(category=> category.ID)
+        @Html.TextBoxFor(category => category.ID, new {@class="form-control"})
+        <br />
+        @*@Html.LabelFor(category => category.Name)*@
+    <label>KATEGORİ ADI</label>
+        <br />
+        @Html.TextBoxFor(category => category.Name, new {@class="form-cont"})
+    </div>
+    <div>
+        <button class="btn btn-warning">Güncelle</button>
+    </div>
+    
+}

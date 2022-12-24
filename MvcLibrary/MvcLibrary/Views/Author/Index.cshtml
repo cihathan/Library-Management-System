@@ -1,0 +1,26 @@
+﻿@using MvcLibrary.Models.Entity
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Yazarlar</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>AD</th>
+        <th>Soyad</th>
+        <th>Detay</th>
+    </tr>
+    @foreach(var author in Model)
+            {
+                <tr>
+                    <td>@author.ID</td>
+                    <td>@author.Name</td>
+                    <td>@author.LastName</td>
+                    <td>@author.Details</td>
+                </tr>
+            }
+</table>
+<a class="btn btn-primary" href="/Author/AddAuthor/">Yeni Yazar Ekle</a>
