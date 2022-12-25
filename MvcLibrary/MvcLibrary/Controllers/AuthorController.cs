@@ -26,5 +26,26 @@ namespace MvcLibrary.Controllers
             db.SaveChanges();
             return View();
         }
+        public ActionResult DeleteAuthor(int id)
+        {
+            var author = db.Author.Find(id);
+            db.Author.Remove(author);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+        public ActionResult GetAuthor(int id)
+        {
+            var author = db.Author.Find(id);
+            return View("GetAuthor", author);
+        }
+        public ActionResult UpdateAuthor(Author a)
+        {
+            var author = db.Author.Find(a.ID);
+            author.Name = a.Name;
+            author.LastName = a.LastName;
+            author.Details = a.Details;
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }

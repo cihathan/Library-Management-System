@@ -12,15 +12,19 @@
         <th>AD</th>
         <th>Soyad</th>
         <th>Detay</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
     </tr>
-    @foreach(var author in Model)
-            {
-                <tr>
-                    <td>@author.ID</td>
-                    <td>@author.Name</td>
-                    <td>@author.LastName</td>
-                    <td>@author.Details</td>
-                </tr>
-            }
+    @foreach (var author in Model)
+    {
+        <tr>
+            <td>@author.ID</td>
+            <td>@author.Name</td>
+            <td>@author.LastName</td>
+            <td>@author.Details</td>
+            <td>@Html.ActionLink("Sil", "DeleteAuthor", new { id = author.ID }, new { @class = "btn btn-danger", onclick = "return confirm('Silmek istiyor musunuz?')" })</td>
+            <td><a href="/Author/GetAuthor/@author.ID" class="btn btn-success">Güncelle</a></td>
+        </tr>
+    }
 </table>
 <a class="btn btn-primary" href="/Author/AddAuthor/">Yeni Yazar Ekle</a>

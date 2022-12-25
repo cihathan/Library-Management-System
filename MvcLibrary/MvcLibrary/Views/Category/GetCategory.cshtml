@@ -5,14 +5,13 @@
 }
 
 @using (Html.BeginForm("UpdateCategory", "Category", FormMethod.Post))
-{   <br />
+{ 
+    <div style="margin-bottom:15px"></div>
     <div class="form-group">
         @Html.LabelFor(category=> category.ID)
         @Html.TextBoxFor(category => category.ID, new {@class="form-control"})
-        <br />
         @*@Html.LabelFor(category => category.Name)*@
-    <label>KATEGORİ ADI</label>
-        <br />
+    <label>KATEGORİ ADI</label>     
         @Html.TextBoxFor(category => category.Name, new {@class="form-cont"})
     </div>
     <div>
