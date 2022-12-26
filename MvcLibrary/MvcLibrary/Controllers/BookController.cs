@@ -22,14 +22,20 @@ namespace MvcLibrary.Controllers
         {
             List<SelectListItem> categoryValue = (from i in db.Category.ToList() select new SelectListItem { Text = i.Name, Value = i.ID.ToString() }).ToList();
             ViewBag.cValue = categoryValue;
-            List<SelectListItem> authorValue = (from i in db.Author.ToList() select new SelectListItem { Text = i.Name + i.LastName, Value = i.Name.ToString() }).ToList();
+            List<SelectListItem> authorValue = (from i in db.Author.ToList() select new SelectListItem { Text = i.Name + ' ' + i.LastName, Value = i.Name.ToString() }).ToList();
             ViewBag.aValue = authorValue;
             return View();
         }
         [HttpPost]
         public ActionResult AddBook(Book book)
         {
-            return View();
+            var category = db.Category.Where(x => x.ID == book.Category1.ID).FirstOrDefault();
+            var author = db.Author.Where(x => x.ID == book.Author1.ID).FirstOrDefault();
+            book.Category1 = category;
+            book.Author1 = author;
+            db.Book.Add(book);
+            db.SaveChanges();
+            return RedirectToAction("Index");
         }
     }
 }
