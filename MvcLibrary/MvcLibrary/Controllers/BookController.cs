@@ -10,12 +10,18 @@ namespace MvcLibrary.Controllers
 {
     public class BookController : Controller
     {
+        /* <---------------------!!!!!!!!!!!!!!!!!!!!!!---------------------> */
         // GET: Book
         devrimme_cihatEntities db = new devrimme_cihatEntities();
-        public ActionResult Index()
+        public ActionResult Index(string p)
         {
-            var books = db.Book.ToList();
-            return View(books);
+            var books = from b in db.Book select b;
+            if (!string.IsNullOrEmpty(p))
+            {
+                books = books.Where(x => x.Name.Contains(p));
+            }
+            //var books = db.Book.ToList();
+            return View(books.ToList());
         }
         [HttpGet]
         public ActionResult AddBook()
