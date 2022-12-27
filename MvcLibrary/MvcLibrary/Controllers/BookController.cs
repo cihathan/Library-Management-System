@@ -26,6 +26,7 @@ namespace MvcLibrary.Controllers
             ViewBag.aValue = authorValue;
             return View();
         }
+        /* <---------------------!!!!!!!!!!!!!!!!!!!!!!---------------------> */
         [HttpPost]
         public ActionResult AddBook(Book book)
         {
@@ -43,6 +44,11 @@ namespace MvcLibrary.Controllers
             db.Book.Remove(book);
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
+        public ActionResult GetBook(int id)
+        {
+            var book = db.Book.Find(id);
+            return View("GetBook", book);
         }
     }
 }
