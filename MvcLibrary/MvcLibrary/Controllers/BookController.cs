@@ -48,7 +48,28 @@ namespace MvcLibrary.Controllers
         public ActionResult GetBook(int id)
         {
             var book = db.Book.Find(id);
+            List<SelectListItem> categoryValue = (from i in db.Category.ToList() select new SelectListItem { Text = i.Name, Value = i.ID.ToString() }).ToList();
+            ViewBag.cValue = categoryValue;
+
+            List<SelectListItem> authorValue = (from i in db.Author.ToList() select new SelectListItem { Text = i.Name + ' ' + i.LastName, Value = i.ID.ToString() }).ToList();
+            ViewBag.aValue = authorValue;
             return View("GetBook", book);
+        }
+
+        /* <---------------------!!!!!!!!!!!!!!!!!!!!!!---------------------> */
+        public ActionResult UpdateBook(Book b)
+        {
+            var book = db.Book.Find(b.ID);
+            book.Name = b.Name;
+            book.YearOfPublication = b.YearOfPublication;
+            book.NumberOfPages = b.NumberOfPages;
+            book.Publisher = b.Publisher;
+            var category = db.Category.Where(x => x.ID == b.Category1.ID).FirstOrDefault();
+            var author = db.Author.Where(x=>x.ID== b.Author1.ID).FirstOrDefault();
+            book.Category = category.ID;
+            book.Author = author.ID;
+            db.SaveChanges();
+            return RedirectToAction("Index");
         }
     }
 }

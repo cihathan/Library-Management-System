@@ -18,26 +18,27 @@
         </div>
         <div style="margin-bottom:15px">
             <label>Kategorisi</label>
-            @Html.TextBoxFor(x => x.Category, new { @class = "form-control" })
+            @Html.DropDownListFor(x => x.Category1.ID, (List<SelectListItem>)ViewBag.cValue, new { @class = "form-control" })
         </div>
-        <div style="margin-bottom:15px">
-            <label>Yazarı</label>
-            @Html.TextBoxFor(x => x.Author, new { @class = "form-control" })
-        </div>
-        <div style="margin-bottom:15px">
-            <label>Basım Yılı</label>
-            @Html.TextBoxFor(x => x.YearOfPublication, new { @class = "form-control" })
-        </div>
-        <div style="margin-bottom:15px">
-            <label>Yayınevi</label>
-            @Html.TextBoxFor(x => x.Publisher, new { @class = "form-control" })
-        </div>
-        <div style="margin-bottom:15px">
-            <label>Sayfa Sayısı</label>
-            @Html.TextBoxFor(x => x.NumberOfPages, new { @class = "form-control" })
-        </div>
-        <button class="btn btn-warning">Kitap Bilgilerini Güncelle</button>
     </div>
+    <div style="margin-bottom:15px">
+        <label>Yazarı</label>
+        @Html.DropDownListFor(x => x.Author1.ID, (List<SelectListItem>)ViewBag.aValue, new { @class = "form-control" })
+    </div>
+    <div style="margin-bottom:15px">
+        <label>Basım Yılı</label>
+        @Html.TextBoxFor(x => x.YearOfPublication, new { @class = "form-control" })
+    </div>
+    <div style="margin-bottom:15px">
+        <label>Yayınevi</label>
+        @Html.TextBoxFor(x => x.Publisher, new { @class = "form-control" })
+    </div>
+    <div style="margin-bottom:15px">
+        <label>Sayfa Sayısı</label>
+        @Html.TextBoxFor(x => x.NumberOfPages, new { @class = "form-control" })
+    </div>
+    <button class="btn btn-warning">Kitap Bilgilerini Güncelle</button>
+
 }
 
 
