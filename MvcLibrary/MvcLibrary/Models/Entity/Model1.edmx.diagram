@@ -5,14 +5,14 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="8b79426550364d27bdf54f020614439b" Name="Diagram1">
-        <EntityTypeShape EntityType="devrimme_cihatModel.Author" Width="1.5" PointX="1.5" PointY="11.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="devrimme_cihatModel.Book" Width="1.5" PointX="0.75" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="devrimme_cihatModel.Author" Width="1.5" PointX="3" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="devrimme_cihatModel.Book" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
         <EntityTypeShape EntityType="devrimme_cihatModel.Case" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="devrimme_cihatModel.Category" Width="1.5" PointX="1.5" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="devrimme_cihatModel.Category" Width="1.5" PointX="5.375" PointY="7" IsExpanded="true" />
         <EntityTypeShape EntityType="devrimme_cihatModel.Employee" Width="1.5" PointX="6.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="devrimme_cihatModel.Movement" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="devrimme_cihatModel.Penalty" Width="1.5" PointX="5.25" PointY="1.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="devrimme_cihatModel.Users" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="devrimme_cihatModel.Movement" Width="1.5" PointX="3" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="devrimme_cihatModel.Penalty" Width="1.5" PointX="5.25" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="devrimme_cihatModel.Users" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
         <AssociationConnector Association="devrimme_cihatModel.FK_Book_Author" ManuallyRouted="false" />
         <AssociationConnector Association="devrimme_cihatModel.FK_Book_Category" ManuallyRouted="false" />
         <AssociationConnector Association="devrimme_cihatModel.FK_Movement_Book" ManuallyRouted="false" />

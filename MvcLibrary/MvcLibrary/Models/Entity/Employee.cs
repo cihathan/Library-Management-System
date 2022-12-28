@@ -11,10 +11,12 @@ namespace MvcLibrary.Models.Entity
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Employee
     {
         public byte ID { get; set; }
+        [Required(ErrorMessage ="Personel adý boþ geçilemez!")]
         public string Employee1 { get; set; }
     }
 }
