@@ -31,5 +31,26 @@ namespace MvcLibrary.Controllers
             db.SaveChanges();
             return View();
         }
+
+        public ActionResult DeleteEmployee (int id)
+        {
+            var employee = db.Employee.Find(id);
+            db.Employee.Remove(employee);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult GetEmployee(int id)
+        {
+            var employee = db.Employee.Find(id);
+            return View("GetEmployee", employee);
+        }
+        public ActionResult UpdateEmployee(Employee p)
+        {
+            var employee = db.Employee.Find(p.ID);
+            employee.Employee1 = p.Employee1;
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
