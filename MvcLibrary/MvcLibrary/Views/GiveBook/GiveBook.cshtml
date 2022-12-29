@@ -1,0 +1,25 @@
+﻿@model MvcLibrary.Models.Entity.Movement
+@{
+    ViewBag.Title = "GiveBook";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<form class="form-group" method="post">
+    <div></div>
+    <div style="margin-top:15px">
+        <label>Üye ID</label>
+        @Html.TextBoxFor(x => x.Users, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <label>Kihttps://localhost:44331/GetBook/GetBook/tap ID</label>
+        @Html.TextBoxFor(x => x.Book, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <label>Personel ID</label>
+        @Html.TextBoxFor(x => x.Employee, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <button class="btn btn-group" style="background-color:#890cf7; color:white">Kitabı ödünç ver</button>
+    </div>
+</form>
+
