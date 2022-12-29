@@ -1,5 +1,7 @@
 ﻿@using MvcLibrary.Models.Entity
-@model List<Users>
+@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<Users>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/Layout.cshtml";
@@ -21,19 +23,20 @@
         <th>Güncelle</th>
     </tr>
     @foreach (var user in Model)
-    { 
-       <tr>
-           <td>@user.ID</td>
-           <td>@user.Name</td>
-           <td>@user.LastName</td>
-           <td>@user.Mail</td>
-           <td>@user.UserName</td>
-           <td>@user.Password</td>
-           <td>@user.Phone</td>
-           <td>@user.School</td>
-           <td><a href="/User/DeleteUser/@user.ID" class="btn btn-danger">Sil</a></td>
-           <td><a href="/User/GetUser/@user.ID" class="btn btn-success">Güncelle</a></td>
-       </tr>
+    {
+        <tr>
+            <td>@user.ID</td>
+            <td>@user.Name</td>
+            <td>@user.LastName</td>
+            <td>@user.Mail</td>
+            <td>@user.UserName</td>
+            <td>@user.Password</td>
+            <td>@user.Phone</td>
+            <td>@user.School</td>
+            <td><a href="/User/DeleteUser/@user.ID" class="btn btn-danger">Sil</a></td>
+            <td><a href="/User/GetUser/@user.ID" class="btn btn-success">Güncelle</a></td>
+        </tr>
     }
 </table>
+@Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new {page}))
 <a href="/User/AddUser/" class="btn btn-primary">Yeni üye ekle</a>

@@ -4,15 +4,18 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using MvcLibrary.Models.Entity;
+using PagedList;
+
 namespace MvcLibrary.Controllers
 {
     public class UserController : Controller
     {
         devrimme_cihatEntities db = new devrimme_cihatEntities();
         // GET: User
-        public ActionResult Index()
+        public ActionResult Index(int page = 1)
         {
-            var values = db.Users.ToList();
+            //var values = db.Users.ToList();
+            var values = db.Users.ToList().ToPagedList(page, 3);
             return View(values);
         }
         [HttpGet]
