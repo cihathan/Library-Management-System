@@ -1,0 +1,39 @@
+﻿@using MvcLibrary.Models.Entity
+@model List<Users>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Üyeler</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Üye ID</th>
+        <th>Üye Adı</th>
+        <th>Üye Soyadı</th>
+        <th>Mail</th>
+        <th>Kullanıcı Adı</th>
+        <th>Şifresi</th>
+        <th>Telefon</th>
+        <th>Okul</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var user in Model)
+    { 
+       <tr>
+           <td>@user.ID</td>
+           <td>@user.Name</td>
+           <td>@user.LastName</td>
+           <td>@user.Mail</td>
+           <td>@user.UserName</td>
+           <td>@user.Password</td>
+           <td>@user.Phone</td>
+           <td>@user.School</td>
+           <td><a href="/User/DeleteUser/@user.ID" class="btn btn-danger">Sil</a></td>
+           <td><a href="/User/GetUser/@user.ID" class="btn btn-success">Güncelle</a></td>
+       </tr>
+    }
+</table>
+<a href="/User/AddEmployee/" class="btn btn-primary">Yeni personel ekle</a>
