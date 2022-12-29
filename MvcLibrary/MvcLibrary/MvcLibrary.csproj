@@ -260,6 +260,7 @@
     <Content Include="Views\Employee\GetEmployee.cshtml" />
     <Content Include="Views\User\Index.cshtml" />
     <Content Include="Views\User\AddUser.cshtml" />
+    <Content Include="Views\User\GetUser.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

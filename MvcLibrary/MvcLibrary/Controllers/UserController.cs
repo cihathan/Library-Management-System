@@ -34,5 +34,31 @@ namespace MvcLibrary.Controllers
             db.SaveChanges();
             return View();
         }
+        public ActionResult DeleteUser(int id)
+        {
+            var user = db.Users.Find(id);
+            db.Users.Remove(user);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+        public ActionResult GetUser(int id)
+        {
+            var user = db.Users.Find(id);
+            return View("GetUser", user);
+        }
+        public ActionResult UpdateUser(Users p)
+        {
+            var user = db.Users.Find(p.ID);
+            user.Name = p.Name;
+            user.LastName = p.LastName;
+            user.Mail = p.Mail;
+            user.UserName = p.UserName;
+            user.Password = p.Password;
+            user.School = p.School;
+            user.Phone = p.Phone;
+            user.Photo = p.Photo;
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
