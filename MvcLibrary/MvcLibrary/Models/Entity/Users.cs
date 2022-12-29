@@ -11,7 +11,8 @@ namespace MvcLibrary.Models.Entity
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Users
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -22,10 +23,14 @@ namespace MvcLibrary.Models.Entity
         }
     
         public int ID { get; set; }
+        [Required(ErrorMessage ="Adý alanýný boþ býrakamazsýnýz!")]
+        [StringLength(20,ErrorMessage ="Ad alanýna 20 karakter'den fazla girilemez.")]
         public string Name { get; set; }
         public string LastName { get; set; }
+        //mail format
         public string Mail { get; set; }
         public string UserName { get; set; }
+        [StringLength(20, ErrorMessage ="20 karakter'den büyük þifre girilemez.")]
         public string Password { get; set; }
         public string Photo { get; set; }
         public string Phone { get; set; }

@@ -15,5 +15,21 @@ namespace MvcLibrary.Controllers
             var values = db.Users.ToList();
             return View(values);
         }
+        [HttpGet]
+        public ActionResult AddUser()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult AddUser(Users p)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View("AddUser");
+            }
+            db.Users.Add(p);
+            db.SaveChanges();
+            return View();
+        }
     }
 }
