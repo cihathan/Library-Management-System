@@ -12,7 +12,8 @@ namespace MvcLibrary.Controllers
         // GET: GiveBook
         public ActionResult Index()
         {
-            return View();
+            var values = db.Movement.ToList();
+            return View(values);
         }
         [HttpGet]
         public ActionResult GiveBook() {

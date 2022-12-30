@@ -263,6 +263,7 @@
     <Content Include="Views\User\AddUser.cshtml" />
     <Content Include="Views\User\GetUser.cshtml" />
     <Content Include="Views\GiveBook\GiveBook.cshtml" />
+    <Content Include="Views\GiveBook\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
