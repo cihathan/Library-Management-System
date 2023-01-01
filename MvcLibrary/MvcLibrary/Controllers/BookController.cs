@@ -70,6 +70,7 @@ namespace MvcLibrary.Controllers
             book.YearOfPublication = b.YearOfPublication;
             book.NumberOfPages = b.NumberOfPages;
             book.Publisher = b.Publisher;
+            book.Situation = true;
             var category = db.Categories.Where(x => x.CategoryID == b.Category.CategoryID).FirstOrDefault();
             var author = db.Authors.Where(x=>x.AuthorID == b.Author.AuthorID).FirstOrDefault();
             book.CategoryID = category.CategoryID;
