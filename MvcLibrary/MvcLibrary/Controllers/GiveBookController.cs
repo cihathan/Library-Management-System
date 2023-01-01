@@ -12,7 +12,7 @@ namespace MvcLibrary.Controllers
         // GET: GiveBook
         public ActionResult Index()
         {
-            var values = db.Movement.ToList();
+            var values = db.Movements.ToList();
             return View(values);
         }
         [HttpGet]
@@ -22,7 +22,7 @@ namespace MvcLibrary.Controllers
         [HttpPost]
         public ActionResult GiveBook(Movement p)
         {
-            db.Movement.Add(p);
+            db.Movements.Add(p);
             db.SaveChanges();
             return View();
         }

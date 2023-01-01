@@ -24,7 +24,7 @@ namespace MvcLibrary.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult AddUser(Users p)
+        public ActionResult AddUser(User p)
         {
             if (!ModelState.IsValid)
             {
@@ -46,9 +46,9 @@ namespace MvcLibrary.Controllers
             var user = db.Users.Find(id);
             return View("GetUser", user);
         }
-        public ActionResult UpdateUser(Users p)
+        public ActionResult UpdateUser(User p)
         {
-            var user = db.Users.Find(p.ID);
+            var user = db.Users.Find(p.UsersID);
             user.Name = p.Name;
             user.LastName = p.LastName;
             user.Mail = p.Mail;

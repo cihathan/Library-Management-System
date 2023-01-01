@@ -12,7 +12,7 @@ namespace MvcLibrary.Controllers
         // GET: Employee
         public ActionResult Index()
         {
-            var values = db.Employee.ToList();
+            var values = db.Employees.ToList();
             return View(values);
         }
         [HttpGet]
@@ -27,27 +27,27 @@ namespace MvcLibrary.Controllers
             {
                 return View("AddEmployee");
             }
-            db.Employee.Add(employee);
+            db.Employees.Add(employee);
             db.SaveChanges();
             return View();
         }
 
         public ActionResult DeleteEmployee (int id)
         {
-            var employee = db.Employee.Find(id);
-            db.Employee.Remove(employee);
+            var employee = db.Employees.Find(id);
+            db.Employees.Remove(employee);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
 
         public ActionResult GetEmployee(int id)
         {
-            var employee = db.Employee.Find(id);
+            var employee = db.Employees.Find(id);
             return View("GetEmployee", employee);
         }
         public ActionResult UpdateEmployee(Employee p)
         {
-            var employee = db.Employee.Find(p.ID);
+            var employee = db.Employees.Find(p.EmployeeID);
             employee.Employee1 = p.Employee1;
             db.SaveChanges();
             return RedirectToAction("Index");

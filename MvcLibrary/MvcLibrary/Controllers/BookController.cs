@@ -15,7 +15,7 @@ namespace MvcLibrary.Controllers
         devrimme_cihatEntities db = new devrimme_cihatEntities();
         public ActionResult Index(string p)
         {
-            var books = from b in db.Book select b;
+            var books = from b in db.Books select b;
             if (!string.IsNullOrEmpty(p))
             {
                 books = books.Where(x => x.Name.Contains(p));
@@ -26,9 +26,9 @@ namespace MvcLibrary.Controllers
         [HttpGet]
         public ActionResult AddBook()
         {
-            List<SelectListItem> categoryValue = (from i in db.Category.ToList() select new SelectListItem { Text = i.Name, Value = i.ID.ToString() }).ToList();
+            List<SelectListItem> categoryValue = (from i in db.Categories.ToList() select new SelectListItem { Text = i.Name, Value = i.CategoryID.ToString() }).ToList();
             ViewBag.cValue = categoryValue;
-            List<SelectListItem> authorValue = (from i in db.Author.ToList() select new SelectListItem { Text = i.Name + ' ' + i.LastName, Value = i.ID.ToString() }).ToList();
+            List<SelectListItem> authorValue = (from i in db.Authors.ToList() select new SelectListItem { Text = i.Name + ' ' + i.LastName, Value = i.AuthorID.ToString() }).ToList();
             ViewBag.aValue = authorValue;
             return View();
         }
@@ -36,28 +36,28 @@ namespace MvcLibrary.Controllers
         [HttpPost]
         public ActionResult AddBook(Book book)
         {
-            var category = db.Category.Where(x => x.ID == book.Category1.ID).FirstOrDefault();
-            var author = db.Author.Where(x => x.ID == book.Author1.ID).FirstOrDefault();
-            book.Category1 = category;
-            book.Author1 = author;
-            db.Book.Add(book);
+            var category = db.Categories.Where(x => x.CategoryID == book.Category.CategoryID).FirstOrDefault();
+            var author = db.Authors.Where(x => x.AuthorID == book.Author.AuthorID).FirstOrDefault();
+            book.Category = category;
+            book.Author = author;
+            db.Books.Add(book);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
         public ActionResult DeleteBook(int id)
         {
-            var book = db.Book.Find(id);
-            db.Book.Remove(book);
+            var book = db.Books.Find(id);
+            db.Books.Remove(book);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
         public ActionResult GetBook(int id)
         {
-            var book = db.Book.Find(id);
-            List<SelectListItem> categoryValue = (from i in db.Category.ToList() select new SelectListItem { Text = i.Name, Value = i.ID.ToString() }).ToList();
+            var book = db.Books.Find(id);
+            List<SelectListItem> categoryValue = (from i in db.Categories.ToList() select new SelectListItem { Text = i.Name, Value = i.CategoryID.ToString() }).ToList();
             ViewBag.cValue = categoryValue;
 
-            List<SelectListItem> authorValue = (from i in db.Author.ToList() select new SelectListItem { Text = i.Name + ' ' + i.LastName, Value = i.ID.ToString() }).ToList();
+            List<SelectListItem> authorValue = (from i in db.Authors.ToList() select new SelectListItem { Text = i.Name + ' ' + i.LastName, Value = i.AuthorID.ToString() }).ToList();
             ViewBag.aValue = authorValue;
             return View("GetBook", book);
         }
@@ -65,15 +65,15 @@ namespace MvcLibrary.Controllers
         /* <---------------------!!!!!!!!!!!!!!!!!!!!!!---------------------> */
         public ActionResult UpdateBook(Book b)
         {
-            var book = db.Book.Find(b.ID);
+            var book = db.Books.Find(b.BookID);
             book.Name = b.Name;
             book.YearOfPublication = b.YearOfPublication;
             book.NumberOfPages = b.NumberOfPages;
             book.Publisher = b.Publisher;
-            var category = db.Category.Where(x => x.ID == b.Category1.ID).FirstOrDefault();
-            var author = db.Author.Where(x=>x.ID== b.Author1.ID).FirstOrDefault();
-            book.Category = category.ID;
-            book.Author = author.ID;
+            var category = db.Categories.Where(x => x.CategoryID == b.Category.CategoryID).FirstOrDefault();
+            var author = db.Authors.Where(x=>x.AuthorID == b.Author.AuthorID).FirstOrDefault();
+            book.CategoryID = category.CategoryID;
+            book.AuthorID = author.AuthorID;
             db.SaveChanges();
             return RedirectToAction("Index");
         }

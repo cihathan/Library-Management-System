@@ -33,16 +33,16 @@
     @foreach (var book in Model)
     {
         <tr>
-            <td>@book.ID</td>
+            <td>@book.BookID</td>
             <td>@book.Name</td>
-            <td>@book.Author1.Name @book.Author1.LastName</td>
-            <td>@book.Category1.Name</td>
+            <td>@book.Author.Name @book.Author.LastName</td>
+            <td>@book.Category.Name</td>
             <td>@book.YearOfPublication</td>
             <td>@book.Publisher</td>
             <td>@book.NumberOfPages</td>
             <td>@book.Situation</td>
-            <td><a href="/Book/DeleteBook/@book.ID" class="btn btn-danger">Sil</a></td>
-            <td><a href="/Book/GetBook/@book.ID" class="btn btn-success">Güncelle</a></td>
+            <td><a href="/Book/DeleteBook/@book.BookID" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Book/GetBook/@book.BookID" class="btn btn-success">Güncelle</a></td>
         </tr>
     }
 </table>

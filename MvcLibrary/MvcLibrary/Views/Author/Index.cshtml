@@ -18,12 +18,12 @@
     @foreach (var author in Model)
     {
         <tr>
-            <td>@author.ID</td>
+            <td>@author.AuthorID</td>
             <td>@author.Name</td>
             <td>@author.LastName</td>
             <td>@author.Details</td>
-            <td>@Html.ActionLink("Sil", "DeleteAuthor", new { id = author.ID }, new { @class = "btn btn-danger", onclick = "return confirm('Silmek istiyor musunuz?')" })</td>
-            <td><a href="/Author/GetAuthor/@author.ID" class="btn btn-success">Güncelle</a></td>
+            <td>@Html.ActionLink("Sil", "DeleteAuthor", new { id = author.AuthorID }, new { @class = "btn btn-danger", onclick = "return confirm('Silmek istiyor musunuz?')" })</td>
+            <td><a href="/Author/GetAuthor/@author.AuthorID" class="btn btn-success">Güncelle</a></td>
         </tr>
     }
 </table>

@@ -17,19 +17,20 @@ namespace MvcLibrary.Models.Entity
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Movement()
         {
-            this.Penalty = new HashSet<Penalty>();
+            this.Penalties = new HashSet<Penalty>();
         }
     
-        public int ID { get; set; }
-        public Nullable<int> Book { get; set; }
+        public int MovementID { get; set; }
+        public Nullable<int> BookID { get; set; }
         public Nullable<int> Member { get; set; }
-        public Nullable<int> Employee { get; set; }
+        public Nullable<byte> EmployeeID { get; set; }
         public Nullable<System.DateTime> DeliveryDate { get; set; }
         public Nullable<System.DateTime> ReturnDate { get; set; }
     
-        public virtual Book Book1 { get; set; }
-        public virtual Users Users { get; set; }
+        public virtual Book Book { get; set; }
+        public virtual Employee Employee { get; set; }
+        public virtual User User { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Penalty> Penalty { get; set; }
+        public virtual ICollection<Penalty> Penalties { get; set; }
     }
 }

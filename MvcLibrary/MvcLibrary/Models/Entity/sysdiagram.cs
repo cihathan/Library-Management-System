@@ -12,10 +12,12 @@ namespace MvcLibrary.Models.Entity
     using System;
     using System.Collections.Generic;
     
-    public partial class Case
+    public partial class sysdiagram
     {
-        public int CaseID { get; set; }
-        public string Month { get; set; }
-        public Nullable<decimal> Total { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

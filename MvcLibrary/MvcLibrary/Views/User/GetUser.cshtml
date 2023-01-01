@@ -1,41 +1,41 @@
-﻿@model MvcLibrary.Models.Entity.Users
+﻿@model MvcLibrary.Models.Entity.User
 @{
     ViewBag.Title = "GetUser";
     Layout = "~/Views/Shared/Layout.cshtml";
 }
 
 @using (Html.BeginForm("UpdateUser", "User", FormMethod.Post))
-            {
-                <div stlye="margin-top:15px">
-                    <div class="form-group">
-                        @Html.LabelFor(x => x.ID)
-                        @Html.TextBoxFor(x => x.ID, new { @class = "form-control" })
-                        <br />
-                        <label>Üye Adı</label>
-                        @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
-                        <br />
-                        <label>Üye Soyadı</label>
-                        @Html.TextBoxFor(x => x.LastName, new { @class = "form-control" })
-                        <br />
-                        <label>Kullanıcı Adı</label>
-                        @Html.TextBoxFor(x => x.UserName, new { @class = "form-control" })
-                        <br />
-                        <label>Şifre</label>
-                        @Html.TextBoxFor(x => x.Password, new { @class = "form-control" })
-                        <br />
-                        <label>Mail Adresi</label>
-                        @Html.TextBoxFor(x => x.Mail, new { @class = "form-control" })
-                        <br />
-                        <label>Üye Okulu</label>
-                        @Html.TextBoxFor(x => x.School, new { @class = "form-control" })
-                        <br />
-                        <label>Telefon</label>
-                        @Html.TextBoxFor(x => x.Phone, new { @class = "form-control" })
-                        <br />
-                        <label>Fotoğraf</label>
-                        @Html.TextBoxFor(x => x.Photo  , new { @class = "form-control" })
-                        <br />
-                    </div>
-                    <button class="btn btn-warning">Güncelle</button>
-                </div>
-            }
+{
+    <div stlye="margin-top:15px">
+        <div class="form-group">
+            @Html.LabelFor(x => x.UsersID)
+            @Html.TextBoxFor(x => x.UsersID, new { @class = "form-control" })
+            <br />
+            <label>Üye Adı</label>
+            @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+            <br />
+            <label>Üye Soyadı</label>
+            @Html.TextBoxFor(x => x.LastName, new { @class = "form-control" })
+            <br />
+            <label>Kullanıcı Adı</label>
+            @Html.TextBoxFor(x => x.UserName, new { @class = "form-control" })
+            <br />
+            <label>Şifre</label>
+            @Html.TextBoxFor(x => x.Password, new { @class = "form-control" })
+            <br />
+            <label>Mail Adresi</label>
+            @Html.TextBoxFor(x => x.Mail, new { @class = "form-control" })
+            <br />
+            <label>Üye Okulu</label>
+            @Html.TextBoxFor(x => x.School, new { @class = "form-control" })
+            <br />
+            <label>Telefon</label>
+            @Html.TextBoxFor(x => x.Phone, new { @class = "form-control" })
+            <br />
+            <label>Fotoğraf</label>
+            @Html.TextBoxFor(x => x.Photo, new { @class = "form-control" })
+            <br />
+        </div>
+        <button class="btn btn-warning">Güncelle</button>
+    </div>
+}

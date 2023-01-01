@@ -1,7 +1,7 @@
 ﻿@using MvcLibrary.Models.Entity
 @using PagedList
 @using PagedList.Mvc
-@model PagedList.IPagedList<Users>
+@model PagedList.IPagedList<User>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/Layout.cshtml";
@@ -25,7 +25,7 @@
     @foreach (var user in Model)
     {
         <tr>
-            <td>@user.ID</td>
+            <td>@user.UsersID</td>
             <td>@user.Name</td>
             <td>@user.LastName</td>
             <td>@user.Mail</td>
@@ -33,10 +33,10 @@
             <td>@user.Password</td>
             <td>@user.Phone</td>
             <td>@user.School</td>
-            <td><a href="/User/DeleteUser/@user.ID" class="btn btn-danger">Sil</a></td>
-            <td><a href="/User/GetUser/@user.ID" class="btn btn-success">Güncelle</a></td>
+            <td><a href="/User/DeleteUser/@user.UsersID" class="btn btn-danger">Sil</a></td>
+            <td><a href="/User/GetUser/@user.UsersID" class="btn btn-success">Güncelle</a></td>
         </tr>
     }
 </table>
-@Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new {page}))
+@Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }))
 <a href="/User/AddUser/" class="btn btn-primary">Yeni üye ekle</a>

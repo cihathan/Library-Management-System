@@ -10,7 +10,7 @@
     <div class="form-group">
         <div style="margin-bottom:15px">
             <label>Kitap ID</label>
-            @Html.TextBoxFor(x => x.ID, new { @class = "form-control" })
+            @Html.TextBoxFor(x => x.BookID, new { @class = "form-control" })
         </div>
         <div style="margin-bottom:15px">
             <label>Kitap Adı</label>
@@ -18,12 +18,12 @@
         </div>
         <div style="margin-bottom:15px">
             <label>Kategorisi</label>
-            @Html.DropDownListFor(x => x.Category1.ID, (List<SelectListItem>)ViewBag.cValue, new { @class = "form-control" })
+            @Html.DropDownListFor(x => x.Category.CategoryID, (List<SelectListItem>)ViewBag.cValue, new { @class = "form-control" })
         </div>
     </div>
     <div style="margin-bottom:15px">
         <label>Yazarı</label>
-        @Html.DropDownListFor(x => x.Author1.ID, (List<SelectListItem>)ViewBag.aValue, new { @class = "form-control" })
+        @Html.DropDownListFor(x => x.Author.AuthorID, (List<SelectListItem>)ViewBag.aValue, new { @class = "form-control" })
     </div>
     <div style="margin-bottom:15px">
         <label>Basım Yılı</label>

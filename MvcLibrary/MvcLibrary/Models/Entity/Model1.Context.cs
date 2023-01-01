@@ -27,14 +27,15 @@ namespace MvcLibrary.Models.Entity
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Author> Author { get; set; }
-        public virtual DbSet<Book> Book { get; set; }
-        public virtual DbSet<Case> Case { get; set; }
-        public virtual DbSet<Category> Category { get; set; }
-        public virtual DbSet<Employee> Employee { get; set; }
-        public virtual DbSet<Movement> Movement { get; set; }
-        public virtual DbSet<Penalty> Penalty { get; set; }
-        public virtual DbSet<Users> Users { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
+        public virtual DbSet<Author> Authors { get; set; }
+        public virtual DbSet<Book> Books { get; set; }
+        public virtual DbSet<Case> Cases { get; set; }
+        public virtual DbSet<Category> Categories { get; set; }
+        public virtual DbSet<Employee> Employees { get; set; }
+        public virtual DbSet<Movement> Movements { get; set; }
+        public virtual DbSet<Penalty> Penalties { get; set; }
+        public virtual DbSet<User> Users { get; set; }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
         {

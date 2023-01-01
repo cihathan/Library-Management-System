@@ -14,14 +14,14 @@ namespace MvcLibrary.Models.Entity
     
     public partial class Penalty
     {
-        public int ID { get; set; }
+        public int PenaltyID { get; set; }
         public Nullable<int> Member { get; set; }
         public Nullable<System.DateTime> StartingDate { get; set; }
         public Nullable<System.DateTime> EndDate { get; set; }
         public Nullable<decimal> Money { get; set; }
-        public Nullable<int> Movement { get; set; }
+        public Nullable<int> MovementID { get; set; }
     
-        public virtual Movement Movement1 { get; set; }
-        public virtual Users Users { get; set; }
+        public virtual Movement Movement { get; set; }
+        public virtual User User { get; set; }
     }
 }

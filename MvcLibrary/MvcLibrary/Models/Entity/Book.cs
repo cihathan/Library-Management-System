@@ -17,21 +17,21 @@ namespace MvcLibrary.Models.Entity
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Book()
         {
-            this.Movement = new HashSet<Movement>();
+            this.Movements = new HashSet<Movement>();
         }
     
-        public int ID { get; set; }
+        public int BookID { get; set; }
         public string Name { get; set; }
-        public Nullable<byte> Category { get; set; }
-        public Nullable<int> Author { get; set; }
+        public Nullable<byte> CategoryID { get; set; }
+        public Nullable<int> AuthorID { get; set; }
         public string YearOfPublication { get; set; }
         public string Publisher { get; set; }
         public string NumberOfPages { get; set; }
         public Nullable<bool> Situation { get; set; }
     
-        public virtual Author Author1 { get; set; }
-        public virtual Category Category1 { get; set; }
+        public virtual Author Author { get; set; }
+        public virtual Category Category { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Movement> Movement { get; set; }
+        public virtual ICollection<Movement> Movements { get; set; }
     }
 }

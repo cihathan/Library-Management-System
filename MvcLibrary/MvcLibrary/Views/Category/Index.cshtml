@@ -19,10 +19,10 @@
     @foreach (var category in Model)
     {
         <tr>
-            <td>@category.ID</td>
+            <td>@category.CategoryID</td>
             <td>@category.Name</td>
-            <td><a href="/Category/DeleteCategory/@category.ID" class="btn btn-danger">Sil</a></td>
-            <td><a href="/Category/GetCategory/@category.ID" class="btn btn-success">Güncelle</a></td>
+            <td><a href="/Category/DeleteCategory/@category.CategoryID" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Category/GetCategory/@category.CategoryID" class="btn btn-success">Güncelle</a></td>
         </tr>
     }
 </table>

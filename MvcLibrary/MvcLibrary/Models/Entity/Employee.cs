@@ -11,12 +11,19 @@ namespace MvcLibrary.Models.Entity
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class Employee
     {
-        public byte ID { get; set; }
-        [Required(ErrorMessage ="Personel adý boþ geçilemez!")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Employee()
+        {
+            this.Movements = new HashSet<Movement>();
+        }
+    
+        public byte EmployeeID { get; set; }
         public string Employee1 { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Movement> Movements { get; set; }
     }
 }

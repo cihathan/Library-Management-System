@@ -20,13 +20,13 @@
     @foreach (var book in Model)
     {
         <tr>
-            <td>@book.ID</td>
-            <td>@book.Book1.Name</td>
-            <td>@book.Users.Name&nbsp @book.Users.LastName</td>
+            <td>@book.BookID</td>
+            <td>@book.Book.Name</td>
+            <td>@book.User.Name&nbsp @book.User.LastName</td>
             <td>@book.Employee</td>
             <td>@Convert.ToDateTime(book.DeliveryDate).ToString("dd/MM/yyyy")</td>
             <td>@Convert.ToDateTime(book.ReturnDate).ToString("dd/MM/yyyy")</td>
-            <td><a href="/GiveBook/GetBook/@book.ID" class="btn btn-default" style="background-color:#ff6a00; color:white">Kitabı iade et</a></td>
+            <td><a href="/GiveBook/GetBook/@book.BookID" class="btn btn-default" style="background-color:#ff6a00; color:white">Kitabı iade et</a></td>
         </tr>
     }
 </table>

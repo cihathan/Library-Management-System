@@ -13,7 +13,7 @@ namespace MvcLibrary.Controllers
         devrimme_cihatEntities db = new devrimme_cihatEntities();
         public ActionResult Index()
         {
-            var values = db.Category.ToList();
+            var values = db.Categories.ToList();
             return View(values);
         }
 
@@ -25,25 +25,25 @@ namespace MvcLibrary.Controllers
         [HttpPost]
         public ActionResult AddCategory(Category category)
         {
-            db.Category.Add(category);
+            db.Categories.Add(category);
             db.SaveChanges();
             return View();
         }
         public ActionResult DeleteCategory(int id)
         {
-            var category = db.Category.Find(id);
-            db.Category.Remove(category);
+            var category = db.Categories.Find(id);
+            db.Categories.Remove(category);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
         public ActionResult GetCategory(int id)
         {
-            var category = db.Category.Find(id);
+            var category = db.Categories.Find(id);
             return View("GetCategory", category);
         }
         public ActionResult UpdateCategory(Category category)
         {
-            var ctg = db.Category.Find(category.ID);
+            var ctg = db.Categories.Find(category.CategoryID);
             ctg.Name = category.Name;
             db.SaveChanges();
             return RedirectToAction("Index");
