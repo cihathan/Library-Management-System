@@ -69,6 +69,8 @@
           <Property Name="EmployeeID" Type="tinyint" />
           <Property Name="DeliveryDate" Type="smalldatetime" />
           <Property Name="ReturnDate" Type="smalldatetime" />
+          <Property Name="UserDeliveryDate" Type="smalldatetime" />
+          <Property Name="TransactionStatus" Type="bit" />
         </EntityType>
         <EntityType Name="Penalty">
           <Key>
@@ -407,6 +409,8 @@
           <NavigationProperty Name="Employee" Relationship="devrimme_cihatModel.FK_Movement_Employee1" FromRole="Movement" ToRole="Employee" />
           <NavigationProperty Name="User" Relationship="devrimme_cihatModel.FK_Movement_Users" FromRole="Movement" ToRole="User" />
           <NavigationProperty Name="Penalties" Relationship="devrimme_cihatModel.FK_Penalty_Movement" FromRole="Movement" ToRole="Penalty" />
+          <Property Name="TransactionStatus" Type="Boolean" />
+          <Property Name="UserDeliveryDate" Type="DateTime" Precision="0" />
         </EntityType>
         <EntityType Name="Penalty">
           <Key>
@@ -614,6 +618,8 @@
           <EntitySetMapping Name="Movements">
             <EntityTypeMapping TypeName="devrimme_cihatModel.Movement">
               <MappingFragment StoreEntitySet="Movement">
+                <ScalarProperty Name="UserDeliveryDate" ColumnName="UserDeliveryDate" />
+                <ScalarProperty Name="TransactionStatus" ColumnName="TransactionStatus" />
                 <ScalarProperty Name="ReturnDate" ColumnName="ReturnDate" />
                 <ScalarProperty Name="DeliveryDate" ColumnName="DeliveryDate" />
                 <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
