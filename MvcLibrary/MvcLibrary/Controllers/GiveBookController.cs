@@ -8,6 +8,7 @@ namespace MvcLibrary.Controllers
 {
     public class GiveBookController : Controller
     {
+        // Bu controller ödünç kitap ve ödünç kitap iade işlemleri için kullanılmaktadır.
         devrimme_cihatEntities db = new devrimme_cihatEntities();
         // GET: GiveBook
         public ActionResult Index()
@@ -16,9 +17,12 @@ namespace MvcLibrary.Controllers
             return View(values);
         }
         [HttpGet]
-        public ActionResult GiveBook() {
+        public ActionResult GiveBook()
+        {
             return View();
         }
+
+        // Ödünç kitap verme işlemleri için.
         [HttpPost]
         public ActionResult GiveBook(Movement p)
         {
@@ -26,10 +30,22 @@ namespace MvcLibrary.Controllers
             db.SaveChanges();
             return View();
         }
+        // Ödünç kitabın iade işlemleri için. 
         public ActionResult GetBook(int id)
         {
             var getBook = db.Movements.Find(id);
             return View("GetBook", getBook);
+        }
+        public ActionResult GetBookUpdate(Movement p)
+        {
+            var movement = db.Movements.Find(p.MovementID);
+            // Üyenin kitabı teslim tarihi.
+            movement.UserDeliveryDate = p.UserDeliveryDate;
+            // İşlem durumu.
+            movement.TransactionStatus = true;
+            //movement.UserDeliveryDate = DateTime.Now;
+            db.SaveChanges();
+            return RedirectToAction("Index");
         }
     }
 }

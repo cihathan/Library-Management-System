@@ -4,9 +4,10 @@
     Layout = "~/Views/Shared/Layout.cshtml";
 }
 
+@* Ödünç kitabı iade alma *@
 <h2>Ödünç İade</h2>
 
-@using (Html.BeginForm("GetBookUpdate", "GetBook", FormMethod.Post))
+@using (Html.BeginForm("GetBookUpdate", "GiveBook", FormMethod.Post))
 {
     <div style="margin-top:15px"></div>
     <div class="form-group">
@@ -25,8 +26,11 @@
         <label>Alış Tarihi</label>
         @Html.TextBoxFor(x => x.DeliveryDate, "{0: dd.MM.yyyy}", new { @class = "form-control" })
         <br />
-        <label>İade Tarihi</label>
+        <label>Son Teslim Tarihi</label>
         @Html.TextBoxFor(x => x.ReturnDate, "{0: dd.MM.yyyy}", new { @class = "form-control" })
+        <br />
+        <label>Üyenin Teslim Ettiği Tarih</label>
+        <input type="text" class="form-control" name="UserDeliveryDate" value="@DateTime.Now.ToShortDateString()" />
         </div>
     <div style="margin-top:15px">
         <button class="btn btn-group" style="background-color:#028d01; color:white">Ödünç kitabı geri al</button>
