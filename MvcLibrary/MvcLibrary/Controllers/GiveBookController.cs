@@ -26,5 +26,10 @@ namespace MvcLibrary.Controllers
             db.SaveChanges();
             return View();
         }
+        public ActionResult GetBook(int id)
+        {
+            var getBook = db.Movements.Find(id);
+            return View("GetBook", getBook);
+        }
     }
 }

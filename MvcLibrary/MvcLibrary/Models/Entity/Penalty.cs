@@ -15,7 +15,7 @@ namespace MvcLibrary.Models.Entity
     public partial class Penalty
     {
         public int PenaltyID { get; set; }
-        public Nullable<int> Member { get; set; }
+        public Nullable<int> UsersID { get; set; }
         public Nullable<System.DateTime> StartingDate { get; set; }
         public Nullable<System.DateTime> EndDate { get; set; }
         public Nullable<decimal> Money { get; set; }

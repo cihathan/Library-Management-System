@@ -22,7 +22,7 @@ namespace MvcLibrary.Models.Entity
     
         public int MovementID { get; set; }
         public Nullable<int> BookID { get; set; }
-        public Nullable<int> Member { get; set; }
+        public Nullable<int> UsersID { get; set; }
         public Nullable<byte> EmployeeID { get; set; }
         public Nullable<System.DateTime> DeliveryDate { get; set; }
         public Nullable<System.DateTime> ReturnDate { get; set; }

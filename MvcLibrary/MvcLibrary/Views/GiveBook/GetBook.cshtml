@@ -1,0 +1,34 @@
+﻿@model MvcLibrary.Models.Entity.Movement
+@{
+    ViewBag.Title = "GetBook";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Ödünç İade</h2>
+
+@using (Html.BeginForm("GetBookUpdate", "GetBook", FormMethod.Post))
+{
+    <div style="margin-top:15px"></div>
+    <div class="form-group">
+        <label>Hareket ID</label>
+        @Html.TextBoxFor(x => x.MovementID, new { @class = "form-control" })
+        <br />
+        <label>Kitap Adı</label>
+        @Html.TextBoxFor(x => x.Book.Name, new { @class = "form-control" })
+        <br />
+        <label>Üye</label>
+        @Html.TextBoxFor(x => x.User.Name, new { @class = "form-control" })
+        <br />
+        <label>Personel</label>
+        @Html.TextBoxFor(x => x.Employee.Employee1, new { @class = "form-control" })
+        <br />
+        <label>Alış Tarihi</label>
+        @Html.TextBoxFor(x => x.DeliveryDate, "{0: dd.MM.yyyy}", new { @class = "form-control" })
+        <br />
+        <label>İade Tarihi</label>
+        @Html.TextBoxFor(x => x.ReturnDate, "{0: dd.MM.yyyy}", new { @class = "form-control" })
+        </div>
+        <div>
+            <button class="btn-warning">Güncelle</button>
+        </div>
+        }
