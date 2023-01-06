@@ -13,7 +13,8 @@ namespace MvcLibrary.Controllers
         // GET: GiveBook
         public ActionResult Index()
         {
-            var values = db.Movements.ToList();
+            // Movement tablosundaki TransactionStatus, durumu false olanları getirir.
+            var values = db.Movements.Where(x => x.TransactionStatus == false).ToList();
             return View(values);
         }
         [HttpGet]
@@ -22,7 +23,7 @@ namespace MvcLibrary.Controllers
             return View();
         }
 
-        // Ödünç kitap verme işlemleri için.
+        // Ödünç kitap verme işlemleri için kullanılmıştır.
         [HttpPost]
         public ActionResult GiveBook(Movement p)
         {
@@ -30,7 +31,7 @@ namespace MvcLibrary.Controllers
             db.SaveChanges();
             return View();
         }
-        // Ödünç kitabın iade işlemleri için. 
+        // Ödünç kitabın iade işlemleri için kullanılmıştır.  
         public ActionResult GetBook(int id)
         {
             var getBook = db.Movements.Find(id);

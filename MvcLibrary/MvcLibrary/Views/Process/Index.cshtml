@@ -1,0 +1,36 @@
+﻿@using MvcLibrary.Models.Entity
+@model List<Movement>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>İadesi alınan kitap listesi</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>İşlem ID</th>
+        <th>Kitap Adı</th>
+        <th>Üye</th>
+        <th>Personel</th>
+        <th>Alış Tarihi</th>
+        <th>İade Tarihi</th>
+        <th>İade Al</th>
+    </tr>
+    @foreach (var book in Model)
+    {
+        <tr>
+            <td>@book.MovementID</td>
+            <td>@book.Book.Name</td>
+            <td>@book.User.Name </td>
+            <td>@book.User.LastName</td>
+            <td>@book.EmployeeID</td>
+            @*---------------------------------------------------------------------------------------------------------*@
+            @* DeliveryDate üyenin kitabı teslim aldığı tarihtir. ReturnDate ise üyenin kitabı teslim ettiği tarihtir. *@
+            @*---------------------------------------------------------------------------------------------------------*@
+            <td>@Convert.ToDateTime(book.DeliveryDate).ToString("dd/MM/yyyy")</td>
+            <td>@Convert.ToDateTime(book.ReturnDate).ToString("dd/MM/yyyy")</td>
+            <td><a href="/GiveBook/GetBook/@book.MovementID" class="btn btn-default" style="background-color:#0094ff; color:white">Detaylar</a></td>
+        </tr>
+    }
+</table>

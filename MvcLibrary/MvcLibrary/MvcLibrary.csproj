@@ -141,6 +141,7 @@
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\GiveBookController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProcessController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -268,6 +269,7 @@
     <Content Include="Views\GiveBook\GiveBook.cshtml" />
     <Content Include="Views\GiveBook\Index.cshtml" />
     <Content Include="Views\GiveBook\GetBook.cshtml" />
+    <Content Include="Views\Process\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
