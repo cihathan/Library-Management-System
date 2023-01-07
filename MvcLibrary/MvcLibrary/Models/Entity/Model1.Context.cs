@@ -28,6 +28,7 @@ namespace MvcLibrary.Models.Entity
         }
     
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
+        public virtual DbSet<About> Abouts { get; set; }
         public virtual DbSet<Author> Authors { get; set; }
         public virtual DbSet<Book> Books { get; set; }
         public virtual DbSet<Case> Cases { get; set; }
@@ -36,6 +37,7 @@ namespace MvcLibrary.Models.Entity
         public virtual DbSet<Movement> Movements { get; set; }
         public virtual DbSet<Penalty> Penalties { get; set; }
         public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<Contact> Contacts { get; set; }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
         {

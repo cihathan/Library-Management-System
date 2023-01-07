@@ -26,8 +26,8 @@ namespace MvcLibrary.Models.Entity
         public Nullable<byte> EmployeeID { get; set; }
         public Nullable<System.DateTime> DeliveryDate { get; set; }
         public Nullable<System.DateTime> ReturnDate { get; set; }
-        public Nullable<bool> TransactionStatus { get; set; }
         public Nullable<System.DateTime> UserDeliveryDate { get; set; }
+        public Nullable<bool> TransactionStatus { get; set; }
     
         public virtual Book Book { get; set; }
         public virtual Employee Employee { get; set; }

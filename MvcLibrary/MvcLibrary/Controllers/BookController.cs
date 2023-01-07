@@ -5,7 +5,6 @@ using System.Security.Cryptography;
 using System.Web;
 using System.Web.Mvc;
 using MvcLibrary.Models.Entity;
-
 namespace MvcLibrary.Controllers
 {
     public class BookController : Controller

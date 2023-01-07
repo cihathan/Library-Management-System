@@ -4,23 +4,25 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="135f582b5c3f40b1b26d31f9d1d11a8a" Name="Diagram1">
-        <EntityTypeShape EntityType="devrimme_cihatModel.sysdiagram" Width="1.5" PointX="2.75" PointY="5.75" />
-        <EntityTypeShape EntityType="devrimme_cihatModel.Author" Width="1.5" PointX="1.5" PointY="11.375" />
-        <EntityTypeShape EntityType="devrimme_cihatModel.Book" Width="1.5" PointX="0.75" PointY="7" />
-        <EntityTypeShape EntityType="devrimme_cihatModel.Case" Width="1.5" PointX="5.75" PointY="4.75" />
-        <EntityTypeShape EntityType="devrimme_cihatModel.Category" Width="1.5" PointX="1.5" PointY="14.125" />
-        <EntityTypeShape EntityType="devrimme_cihatModel.Employee" Width="1.5" PointX="0.75" PointY="16.5" />
-        <EntityTypeShape EntityType="devrimme_cihatModel.Movement" Width="1.5" PointX="3" PointY="1.125" />
-        <EntityTypeShape EntityType="devrimme_cihatModel.Penalty" Width="1.5" PointX="5.25" PointY="1.25" />
-        <EntityTypeShape EntityType="devrimme_cihatModel.User" Width="1.5" PointX="0.75" PointY="1" />
-        <AssociationConnector Association="devrimme_cihatModel.FK_Book_Author" />
-        <AssociationConnector Association="devrimme_cihatModel.FK_Book_Category" />
-        <AssociationConnector Association="devrimme_cihatModel.FK_Movement_Book" />
-        <AssociationConnector Association="devrimme_cihatModel.FK_Movement_Employee1" />
-        <AssociationConnector Association="devrimme_cihatModel.FK_Movement_Users" />
-        <AssociationConnector Association="devrimme_cihatModel.FK_Penalty_Movement" />
-        <AssociationConnector Association="devrimme_cihatModel.FK_Penalty_Users" />
+      <Diagram DiagramId="8df5d2c9b5ce420a9ce81395bf443843" Name="Diagram1">
+        <EntityTypeShape EntityType="devrimme_cihatModel.sysdiagram" Width="1.5" PointX="2.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="devrimme_cihatModel.About" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="devrimme_cihatModel.Author" Width="1.5" PointX="1.5" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="devrimme_cihatModel.Book" Width="1.5" PointX="0.75" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="devrimme_cihatModel.Case" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="devrimme_cihatModel.Category" Width="1.5" PointX="1.5" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="devrimme_cihatModel.Employee" Width="1.5" PointX="0.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="devrimme_cihatModel.Movement" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="devrimme_cihatModel.Penalty" Width="1.5" PointX="5.25" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="devrimme_cihatModel.User" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
+        <AssociationConnector Association="devrimme_cihatModel.FK_Book_Author" ManuallyRouted="false" />
+        <AssociationConnector Association="devrimme_cihatModel.FK_Book_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="devrimme_cihatModel.FK_Movement_Book" ManuallyRouted="false" />
+        <AssociationConnector Association="devrimme_cihatModel.FK_Movement_Employee1" ManuallyRouted="false" />
+        <AssociationConnector Association="devrimme_cihatModel.FK_Movement_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="devrimme_cihatModel.FK_Penalty_Movement" ManuallyRouted="false" />
+        <AssociationConnector Association="devrimme_cihatModel.FK_Penalty_Users" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="devrimme_cihatModel.Contact" Width="1.5" PointX="5.375" PointY="7.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
