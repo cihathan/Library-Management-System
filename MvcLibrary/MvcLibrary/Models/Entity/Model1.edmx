@@ -36,6 +36,7 @@
           <Property Name="Publisher" Type="varchar" MaxLength="50" />
           <Property Name="NumberOfPages" Type="varchar" MaxLength="4" />
           <Property Name="Situation" Type="bit" />
+          <Property Name="BookPicture" Type="varchar" MaxLength="250" />
         </EntityType>
         <EntityType Name="Case">
           <Key>
@@ -370,6 +371,7 @@
           <NavigationProperty Name="Author" Relationship="devrimme_cihatModel.FK_Book_Author" FromRole="Book" ToRole="Author" />
           <NavigationProperty Name="Category" Relationship="devrimme_cihatModel.FK_Book_Category" FromRole="Book" ToRole="Category" />
           <NavigationProperty Name="Movements" Relationship="devrimme_cihatModel.FK_Movement_Book" FromRole="Book" ToRole="Movement" />
+          <Property Name="BookPicture" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Case">
           <Key>
@@ -579,6 +581,7 @@
           <EntitySetMapping Name="Books">
             <EntityTypeMapping TypeName="devrimme_cihatModel.Book">
               <MappingFragment StoreEntitySet="Book">
+                <ScalarProperty Name="BookPicture" ColumnName="BookPicture" />
                 <ScalarProperty Name="Situation" ColumnName="Situation" />
                 <ScalarProperty Name="NumberOfPages" ColumnName="NumberOfPages" />
                 <ScalarProperty Name="Publisher" ColumnName="Publisher" />

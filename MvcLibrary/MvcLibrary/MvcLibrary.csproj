@@ -142,6 +142,7 @@
     <Compile Include="Controllers\GiveBookController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProcessController.cs" />
+    <Compile Include="Controllers\ShowcaseController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -218,6 +219,22 @@
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Web\assets\favicon.ico" />
+    <Content Include="Web\assets\img\yalnızefe.png" />
+    <Content Include="Web\assets\img\ikisehrin.jpg" />
+    <Content Include="Web\assets\img\seksengunde.jpg" />
+    <Content Include="Web\assets\img\drox.jpg" />
+    <Content Include="Web\assets\img\kasagi.png" />
+    <Content Include="Web\assets\img\portfolio\cabin.png" />
+    <Content Include="Web\assets\img\portfolio\cake.png" />
+    <Content Include="Web\assets\img\portfolio\circus.png" />
+    <Content Include="Web\assets\img\portfolio\game.png" />
+    <Content Include="Web\assets\img\portfolio\safe.png" />
+    <Content Include="Web\assets\img\portfolio\submarine.png" />
+    <Content Include="Web\css\styles.css" />
+    <Content Include="Web\assets\img\library.png" />
+    <Content Include="Web\index.html" />
+    <Content Include="Web\js\scripts.js" />
     <EntityDeploy Include="Models\Entity\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
@@ -270,6 +287,7 @@
     <Content Include="Views\GiveBook\Index.cshtml" />
     <Content Include="Views\GiveBook\GetBook.cshtml" />
     <Content Include="Views\Process\Index.cshtml" />
+    <Content Include="Views\Showcase\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
