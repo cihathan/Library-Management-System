@@ -22,6 +22,10 @@ namespace MvcLibrary.Controllers
         }
         public ActionResult AddAuthor(Author author)
         {
+            if (!ModelState.IsValid)
+            {
+                return View("AddAuthor");
+            }
             db.Authors.Add(author);
             db.SaveChanges();
             return View();

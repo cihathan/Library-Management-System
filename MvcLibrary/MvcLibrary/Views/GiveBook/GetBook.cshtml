@@ -1,4 +1,5 @@
 ﻿@model MvcLibrary.Models.Entity.Movement
+
 @{
     ViewBag.Title = "GetBook";
     Layout = "~/Views/Shared/Layout.cshtml";
@@ -31,8 +32,12 @@
         <br />
         <label>Üyenin Teslim Ettiği Tarih</label>
         <input type="text" class="form-control" name="UserDeliveryDate" value="@DateTime.Now.ToShortDateString()" />
-        </div>
+        <br />
+        <label>Geç Gelen Gün Sayısı</label>
+        @*Delayinput Geç Gelen Gün Sayısı*@
+        <input type="text" class="form-control" id="Delayinput" value="@ViewBag.value" />
+    </div>
     <div style="margin-top:15px">
         <button class="btn btn-group" style="background-color:#028d01; color:white">Ödünç kitabı geri al</button>
     </div>
-        }
+}

@@ -35,6 +35,10 @@ namespace MvcLibrary.Controllers
         public ActionResult GetBook(int id)
         {
             var getBook = db.Movements.Find(id);
+            DateTime d1 = DateTime.Parse(getBook.ReturnDate.ToString());
+            DateTime d2 = Convert.ToDateTime(DateTime.Now.ToShortDateString());
+            TimeSpan d3 = d2 - d1;
+            ViewBag.value = d3.TotalDays;
             return View("GetBook", getBook);
         }
         public ActionResult GetBookUpdate(Movement p)
